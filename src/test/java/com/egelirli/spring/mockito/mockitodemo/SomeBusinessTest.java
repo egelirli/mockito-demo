@@ -16,7 +16,6 @@ class SomeBusinessTest {
 		int res = busImpl.findTheGreatestFromAllData();
 		assertEquals(24, res);
 	}
-
 	
 }
 
