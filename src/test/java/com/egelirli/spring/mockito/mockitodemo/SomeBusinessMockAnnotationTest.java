@@ -2,12 +2,13 @@
 package com.egelirli.spring.mockito.mockitodemo;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 /**
  * @author egelirli
@@ -17,8 +18,8 @@ import org.mockito.Mock;
  * @author egelirli
  *
  */
-@RunWith(MockitoJUnitRunner)
-class SomeBusinessMockAnnotationTest {
+@RunWith(MockitoJUnitRunner.class)
+public class SomeBusinessMockAnnotationTest {
 	
 	@Mock
 	DataService dataServiceMock;
@@ -27,7 +28,7 @@ class SomeBusinessMockAnnotationTest {
 	SomeBusinessImpl busImpl;
 	
 	@Test
-	void testFindTheGreatestFromAllData() {
+	public void testFindTheGreatestFromAllData() {
 		//DataService  dataServiceMock = mock(DataService.class);
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {24, 5, 16});
 		
@@ -37,7 +38,7 @@ class SomeBusinessMockAnnotationTest {
 	}
 
 	@Test
-	void testFindTheGreatestFromAllData_ForOneValu() {
+	public void testFindTheGreatestFromAllData_ForOneValu() {
 		//DataService  dataServiceMock = mock(DataService.class);
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {15});
 		
@@ -48,7 +49,7 @@ class SomeBusinessMockAnnotationTest {
 	
 
 	@Test
-	void testFindTheGreatestFromAllData_NoValuues() {
+	public void testFindTheGreatestFromAllData_NoValuues() {
 		//DataService  dataServiceMock = mock(DataService.class);
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {});
 		
