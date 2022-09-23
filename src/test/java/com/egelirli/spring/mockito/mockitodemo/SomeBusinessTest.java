@@ -1,17 +1,18 @@
 package com.egelirli.spring.mockito.mockitodemo;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * @author egelirli
  *
  */
-class SomeBusinessTest {
+
+public class SomeBusinessTest {
 
 	@Test
-	void testFindTheGreatestFromAllData() {
+	public void testFindTheGreatestFromAllData() {
 		SomeBusinessImpl busImpl = new SomeBusinessImpl(new DataSericeStub());
 		int res = busImpl.findTheGreatestFromAllData();
 		assertEquals(24, res);
@@ -22,10 +23,14 @@ class SomeBusinessTest {
 
 class DataSericeStub implements DataService {
 
-	@Override
 	public int[] retrieveAllData() {
-		// TODO Auto-generated method stub
 		return  new int[] {24, 5, 16};
 	}
+
+//	@Override
+//	public int[] retrieveAllData() {
+//		// TODO Auto-generated method stub
+//		return  new int[] {24, 5, 16};
+//	}
 	
 }
