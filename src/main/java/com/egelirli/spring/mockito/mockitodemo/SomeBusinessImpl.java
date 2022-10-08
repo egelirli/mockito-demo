@@ -1,6 +1,10 @@
 package com.egelirli.spring.mockito.mockitodemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class SomeBusinessImpl {
+	
+	@Autowired
 	private DataService dataService;
 	
 	
